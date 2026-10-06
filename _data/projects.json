@@ -1,0 +1,28 @@
+[
+  {
+    "id": "weather-app",
+    "title": "Weather App",
+    "subtitle": "Live forecasts from a public API",
+    "date": "2026-03",
+    "tools": ["JavaScript", "REST API", "CSS"],
+    "image": "/assets/images/weather.png",
+    "overview": "What the project is and why you built it.",
+    "challenges": "What was hard and how you solved it.",
+    "learned": "Key takeaways.",
+    "repo": "https://github.com/your-username/weather-app",
+    "demo": "https://your-demo-link.com"
+  },
+  {
+    "id": "todo-list",
+    "title": "Todo List",
+    "subtitle": "Task manager with local storage",
+    "date": "2026-01",
+    "tools": ["React", "CSS"],
+    "image": "/assets/images/todo.png",
+    "overview": "...",
+    "challenges": "...",
+    "learned": "...",
+    "repo": "https://github.com/your-username/todo-list",
+    "demo": ""
+  }
+]

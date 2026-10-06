@@ -1,44 +1,41 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah Beaujault | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-
-  <header>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  {% include header.html %}
 
   <main>
     <section id="hero">
-      <h1>Sarah Beaujault</h1>
-      <p>Ingénieure Multimédia spécialisée en communication et audiovisuel</p>
+      <h1>Hi, I'm {{ site.title }}</h1>
+      <p>I build things for the web.</p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>A short paragraph about you.</p>
     </section>
 
     <section id="projects">
-  <h2>Projects</h2>
-
-  <div class="project-grid">
-    <article class="project-card">
-      <h3><a href="projects/direction_artistique/">Direction Artistique</a></h3>
-      <p>Live forecasts using a public API.</p>
-      <p class="tags">Animation · After Effect</p>
-    </article>
-
-    <article class="project-card">
-      <h3><a href="projects/graphisme/">Graphisme</a></h3>
-      <p>Task manager with local storage.</p>
-      <p class="tags">Illustrator</p>
-    </article>
-  </div>
-</section>
+      <h2>Projects</h2>
+      <div class="project-grid">
+        {% assign sorted = site.data.projects | sort: "date" | reverse %}
+        {% for p in sorted %}
+        <article class="project-card">
+          <h3><a href="/projects/{{ p.id }}/">{{ p.title }}</a></h3>
+          <p>{{ p.subtitle }}</p>
+          <p class="tags">{{ p.tools | join: " · " }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
 
     <section id="contact">
       <h2>Contact</h2>
@@ -46,9 +43,6 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Your Name</p>
-  </footer>
-
+  {% include footer.html %}
 </body>
 </html>

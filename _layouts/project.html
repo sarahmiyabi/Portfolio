@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% assign p = site.data.projects | where: "id", page.project_id | first %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ p.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ p.subtitle }}">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  {% include header.html %}
+
+  <main class="project-page">
+    <h1>{{ p.title }}</h1>
+    <p class="subtitle">{{ p.subtitle }}</p>
+    <p class="tags">{{ p.date }} · {{ p.tools | join: " · " }}</p>
+
+    {% if p.image %}
+    <img src="{{ p.image }}" alt="Screenshot of {{ p.title }}">
+    {% endif %}
+
+    <h2>Overview</h2>
+    <p>{{ p.overview }}</p>
+
+    <h2>Challenges</h2>
+    <p>{{ p.challenges }}</p>
+
+    <h2>What I learned</h2>
+    <p>{{ p.learned }}</p>
+
+    <p>
+      {% if p.repo != "" %}<a href="{{ p.repo }}">Source code</a>{% endif %}
+      {% if p.demo != "" %}· <a href="{{ p.demo }}">Live demo</a>{% endif %}
+    </p>
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>

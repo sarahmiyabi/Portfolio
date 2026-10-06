@@ -1,0 +1,8 @@
+title: Sarah Beaujault
+description: Portfolio of Sarah Beaujault
+
+defaults:
+  - scope:
+      path: "projects"
+    values:
+      layout: project
