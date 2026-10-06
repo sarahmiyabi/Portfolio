@@ -9,7 +9,7 @@
     "overview": "...",
     "challenges": "...",
     "learned": "...",
-    "repo": "https://github.com/your-username/todo-list",
+    "repo": "",
     "demo": ""
   },
   {
@@ -22,7 +22,20 @@
     "overview": "...",
     "challenges": "...",
     "learned": "...",
-    "repo": "https://github.com/your-username/todo-list",
+    "repo": "",
     "demo": ""
-  }  
+  },
+  {
+    "id": "direction-artistique",
+    "title": "Direction Artistique",
+    "subtitle": "Storybording et illustrations d'un title sequence",
+    "date": "2025-01",
+    "tools": ["AfterEffects", "Canva", "ClipStudioPaint"],
+    "image": "/assets/images/todo.png",
+    "overview": "Réalisation d'une animation de 1min20 introduisant un film d'horreur fictif",
+    "challenges": "Travailler avec une contrainte de temps en duo",
+    "learned": "...",
+    "repo": "",
+    "demo": ""
+  }    
 ]

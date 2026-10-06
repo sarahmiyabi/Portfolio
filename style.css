@@ -1,0 +1,128 @@
+:root {
+  --nav-width: 240px;
+  --red-dark: #5a0b14;
+  --red-hover: #7d1522;
+  --red-accent: #e8a0a8;
+  --text-on-red: #f7ecec;
+  --bg: #5a0b14;
+  --text: #f7ecec;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: medium;
+}
+
+/* ---------- Sidebar navigation (desktop) ---------- */
+header {
+  position: fixed;            /* stays in place while the content scrolls */
+  top: 0;
+  left: 0;
+  width: var(--nav-width);
+  height: 100vh;
+  background: var(--red-dark);
+  overflow-y: auto;           /* scrolls by itself if there are many projects */
+}
+
+nav #home {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;     /* vertical stack */
+  padding: 2rem 0;
+}
+
+nav a {
+  color: var(--text-on-red);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+nav a:hover {
+  background: var(--red-hover);
+  border-left-color: var(--red-accent);
+}
+
+nav a[aria-current="page"] {
+  font-weight: bold;
+}
+
+/* ---------- Content, pushed to the right of the sidebar ---------- */
+main,
+footer {
+  margin-left: var(--nav-width);
+  padding: 2rem 3rem;
+}
+
+/* ---------- Centered titles ---------- */
+h1, h2 {
+  text-align: center;
+}
+
+#hero {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.subtitle,
+.tags {
+  text-align: center;
+}
+
+.project-page img {
+  display: block;
+  max-width: 100%;
+  margin: 1.5rem auto;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* ---------- Phones and small screens: nav goes to the top ---------- */
+@media (max-width: 800px) {
+  header {
+    position: sticky;         /* still sticks to the top while scrolling */
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+  }
+
+  nav {
+    flex-direction: row;      /* horizontal bar */
+    padding: 0;
+    overflow-x: auto;         /* swipe sideways if the links don't fit */
+  }
+
+  nav a {
+    white-space: nowrap;
+    padding: 1rem;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  nav a:hover,
+  nav a[aria-current="page"] {
+    border-bottom-color: var(--red-accent);
+  }
+
+  main,
+  footer {
+    margin-left: 0;
+    padding: 1.5rem 1rem;
+  }
+}

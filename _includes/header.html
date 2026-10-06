@@ -1,7 +1,11 @@
 <header>
   <nav>
-    <a href="/">Home</a>
-    <a href="/#projects">Projects</a>
-    <a href="/#contact">Contact</a>
+    <a id="home" href="/">Portfolio</a>
+    {% assign sorted = site.data.projects | sort: "date" | reverse %}
+    {% for p in sorted %}
+    <a class="project" href="/projects/{{ p.id }}/"{% if page.project_id == p.id %} aria-current="page"{% endif %}>{{ p.title }}</a>
+    {% endfor %}
+
+    <a id="contact" href="/#contact">Contact</a>
   </nav>
 </header>
